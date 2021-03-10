@@ -23,7 +23,7 @@ jobs:
       - name: Cypress run
         uses: cypress-io/github-action@v2
         with:
-          build: cp .env.example .env && npm run build
+          build: npm run build:ci
           start: npm start
         env:
           CYPRESS_HOST: http://localhost:3000
