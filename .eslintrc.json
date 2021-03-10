@@ -1,0 +1,15 @@
+{
+  "extends": [
+    "airbnb-typescript-prettier",
+    "plugin:jest-dom/recommended",
+    "plugin:testing-library/react"
+  ],
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "moduleDirectory": ["node_modules", "."],
+        "extensions": [".js", ".ts", ".jsx", ".tsx", ".json", ".d.ts"]
+      }
+    }
+  }
+}

@@ -1,0 +1,35 @@
+name: Test
+
+on: [push]
+
+jobs:
+  unit-test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+        with:
+          node-version: "12.x"
+          registry-url: https://registry.npmjs.org/
+      - run: yarn
+      - run: npm run lint
+      - run: npm test
+
+  end-to-end-test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      # Install NPM dependencies, cache them correctly
+      # and run all Cypress tests
+      - name: Cypress run
+        uses: cypress-io/github-action@v2
+        with:
+          build: npm run build
+          start: npm start
+        env:
+          CYPRESS_HOST: http://localhost:3000
+          CYPRESS_PLAYLIST_ID: 2MTUd456sHtPNp9dG1vNnR
+          CYPRESS_SESSION_TOKEN: ${{ secrets.CYPRESS_SESSION_TOKEN }}
+          SPOTIFY_CLIENT_ID: ${{ secrets.SPOTIFY_CLIENT_ID }}
+          SPOTIFY_CLIENT_SECRET: ${{ secrets.SPOTIFY_CLIENT_SECRET }}
