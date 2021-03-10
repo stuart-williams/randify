@@ -64,9 +64,6 @@ const handler = async (
         return session;
       },
     },
-    pages: {
-      signIn: "/signin",
-    },
     debug: false,
   });
 
