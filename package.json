@@ -9,7 +9,7 @@
     "build": "next build",
     "prebuild:ci": "cp .env.example .env",
     "build:ci": "next build",
-    "start": "next start",
+    "start": "DEBUG=app:* next start",
     "cy:open": "cypress open",
     "cy:run": "cypress run"
   },

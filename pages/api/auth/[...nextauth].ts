@@ -4,8 +4,6 @@ import { NextApiRequest, NextApiResponse } from "next";
 import NextAuth, { User } from "next-auth";
 import Providers from "next-auth/providers";
 
-console.log("NEXTAUTH_URL", process.env.NEXTAUTH_URL);
-
 const scopes = [
   "playlist-read-private",
   "playlist-modify-private",

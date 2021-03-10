@@ -6,6 +6,7 @@ module.exports = withBundleAnalyzer({
   env: {
     API_URL: process.env.VERCEL_URL + "/api",
     REPO_URL: process.env.REPO_URL,
+    NEXTAUTH_URL: process.env.NEXTAUTH_URL,
   },
   i18n: {
     locales: ["en-GB"],
