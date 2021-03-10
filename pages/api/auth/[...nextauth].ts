@@ -4,6 +4,8 @@ import { NextApiRequest, NextApiResponse } from "next";
 import NextAuth, { User } from "next-auth";
 import Providers from "next-auth/providers";
 
+process.env.NEXTAUTH_URL = "https://randify.vercel.app";
+
 const scopes = [
   "playlist-read-private",
   "playlist-modify-private",
