@@ -4,8 +4,9 @@ const withBundleAnalyzer = require("@next/bundle-analyzer")({
 
 module.exports = withBundleAnalyzer({
   env: {
-    API_URL: process.env.API_URL,
+    API_URL: process.env.VERCEL_URL + "/api",
     REPO_URL: process.env.REPO_URL,
+    NEXTAUTH_URL: process.env.VERCEL_URL,
   },
   i18n: {
     locales: ["en-GB"],
