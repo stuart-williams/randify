@@ -2,9 +2,11 @@ const withBundleAnalyzer = require("@next/bundle-analyzer")({
   enabled: process.env.ANALYZE === "true",
 });
 
+console.log(process.env.VERCEL_URL);
+
 module.exports = withBundleAnalyzer({
   env: {
-    API_URL: `//$${process.env.VERCEL_URL}/api`,
+    API_URL: `//${process.env.VERCEL_URL}/api`,
     REPO_URL: process.env.REPO_URL,
   },
   i18n: {
