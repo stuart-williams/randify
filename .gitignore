@@ -25,5 +25,5 @@ yarn-error.log*
 
 # environment
 .env*
-!.env.example
+!.env.local.example
 cypress.env.json
