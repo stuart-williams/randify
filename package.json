@@ -7,7 +7,7 @@
     "test": "jest",
     "dev": "DEBUG=app:* next dev",
     "build": "next build",
-    "prebuild:ci": "cp .env.example .env",
+    "prebuild:ci": "cp .env.local.example .env.local",
     "build:ci": "next build",
     "start": "DEBUG=app:* next start",
     "cy:open": "cypress open",
