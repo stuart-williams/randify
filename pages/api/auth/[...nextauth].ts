@@ -64,7 +64,6 @@ const handler = async (
         return session;
       },
     },
-    debug: true,
   });
 
 export default handler;
