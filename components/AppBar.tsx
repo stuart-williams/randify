@@ -30,7 +30,7 @@ import { useWindowScroll } from "react-use";
 const AppBar: FunctionComponent = () => {
   const { toggleColorMode } = useColorMode();
   const bg = useColorModeValue("white", "gray.800");
-  const mode = useColorModeValue("dark", "light");
+  const mode = useColorModeValue("Dark", "Light");
   const ModeIcon = useColorModeValue(MoonIcon, SunIcon);
   const scroll = useWindowScroll();
   const [session] = useSession();
@@ -42,12 +42,11 @@ const AppBar: FunctionComponent = () => {
       top={0}
       as="header"
       zIndex="sticky"
-      data-cy="appbar"
       position="sticky"
       boxShadow={scroll.y > 0 ? "sm" : "none"}
     >
       <Container maxW="container.xl">
-        <HStack justifyContent="flex-end">
+        <HStack spacing={1} justifyContent="flex-end">
           <IconButton
             as={Link}
             icon={<Icon as={GithubIcon} />}
@@ -56,19 +55,12 @@ const AppBar: FunctionComponent = () => {
             isExternal
             aria-label={`Go to ${seo.title} Github page`}
           />
-          <IconButton
-            icon={<Icon as={ModeIcon} />}
-            variant="ghost"
-            data-cy="color-mode"
-            onClick={toggleColorMode}
-            aria-label={`Switch to ${mode} mode`}
-          />
           {session && (
             <Menu>
               <MenuButton
                 as={IconButton}
                 icon={<Icon as={UserIcon} />}
-                data-cy="account"
+                data-cy="account-menu-btn"
                 variant="ghost"
                 aria-label="Account"
               />
@@ -78,8 +70,15 @@ const AppBar: FunctionComponent = () => {
                 </Box>
                 <MenuDivider />
                 <MenuItem
+                  icon={<Icon as={ModeIcon} />}
+                  data-cy="color-mode-btn"
+                  onClick={toggleColorMode}
+                >
+                  {mode} mode
+                </MenuItem>
+                <MenuItem
                   icon={<SignOutIcon />}
-                  data-cy="signout"
+                  data-cy="signout-btn"
                   onClick={() => signOut({ callbackUrl: "/signin" })}
                 >
                   Sign out

@@ -50,7 +50,7 @@ const PlaylistItem: FunctionComponent<Props> = ({ playlist }) => {
         </Text>
       </VStack>
       <IconButton
-        data-cy="randomise"
+        data-cy="randomise-btn"
         icon={<Icon as={RandomIcon} />}
         onClick={randomise}
         isLoading={isLoading}

@@ -5,7 +5,7 @@ import { FaSpotify as SpotifyIcon } from "react-icons/fa";
 
 const SpotifyAuthButton: FunctionComponent = () => (
   <Button
-    data-cy="signin"
+    data-cy="signin-btn"
     onClick={() => signIn("spotify")}
     leftIcon={<Icon as={SpotifyIcon} />}
     colorScheme="green"

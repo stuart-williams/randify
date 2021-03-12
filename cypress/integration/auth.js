@@ -4,7 +4,7 @@ describe("Auth", () => {
 
     cy.location("pathname").should("eq", "/");
 
-    cy.dataCy("signin").click();
+    cy.dataCy("signin-btn").click();
 
     cy.location("host").should("eq", "accounts.spotify.com");
     cy.location("pathname").should("include", "/login");
@@ -29,10 +29,8 @@ describe("Auth", () => {
 
     cy.visit(Cypress.env("HOST"));
 
-    cy.dataCy("appbar").within(() => {
-      cy.dataCy("account").click();
-      cy.dataCy("signout").click();
-    });
+    cy.dataCy("account-menu-btn").click();
+    cy.dataCy("signout-btn").click();
 
     cy.location("pathname").should("eq", "/");
   });

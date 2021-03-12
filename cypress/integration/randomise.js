@@ -9,22 +9,24 @@ describe("Randomise", () => {
     cy.visit(Cypress.env("HOST"));
 
     cy.dataCy(Cypress.env("PLAYLIST_ID")).within(() => {
-      cy.dataCy("randomise").click();
+      cy.dataCy("randomise-btn").click();
     });
 
-    cy.dataCy("randomising").should("have.attr", "data-status", "info");
+    cy.dataCy("randomising-modal").should("have.attr", "data-status", "info");
 
     cy.wait("@getRandomise").then(({ response }) => {
       expect(response.statusCode).to.eq(204);
     });
 
-    cy.dataCy("randomising")
-      .should("have.attr", "data-status", "success")
-      .within(() => {
-        cy.dataCy("dismiss").click();
-      });
+    cy.dataCy("randomising-modal").should(
+      "have.attr",
+      "data-status",
+      "success"
+    );
 
-    cy.dataCy("randomising").should("not.exist");
+    cy.dataCy("dismiss-randomising-modal-btn").click();
+
+    cy.dataCy("randomising-modal").should("not.exist");
   });
 
   it("should should handle network errors", () => {
@@ -37,18 +39,16 @@ describe("Randomise", () => {
     cy.visit(Cypress.env("HOST"));
 
     cy.dataCy(Cypress.env("PLAYLIST_ID")).within(() => {
-      cy.dataCy("randomise").click();
+      cy.dataCy("randomise-btn").click();
     });
 
     cy.wait("@getRandomise");
 
-    cy.dataCy("randomising")
-      .should("have.attr", "data-status", "error")
-      .within(() => {
-        cy.dataCy("dismiss").click();
-      });
+    cy.dataCy("randomising-modal").should("have.attr", "data-status", "error");
 
-    cy.dataCy("randomising").should("not.exist");
+    cy.dataCy("dismiss-randomising-modal-btn").click();
+
+    cy.dataCy("randomising-modal").should("not.exist");
   });
 });
 

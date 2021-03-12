@@ -58,7 +58,7 @@ const RandomisingModal: FunctionComponent = () => {
       closeOnOverlayClick={!state.isLoading}
     >
       <ModalOverlay />
-      <ModalContent mx={4} data-cy="randomising" data-status={status}>
+      <ModalContent mx={4} data-cy="randomising-modal" data-status={status}>
         <ModalBody textAlign="center">
           <Alert
             bg="transparent"
@@ -93,7 +93,7 @@ const RandomisingModal: FunctionComponent = () => {
             </Button>
           )}
           {!state.isLoading && (
-            <Button data-cy="dismiss" onClick={onClose}>
+            <Button data-cy="dismiss-randomising-modal-btn" onClick={onClose}>
               Dismiss
             </Button>
           )}
