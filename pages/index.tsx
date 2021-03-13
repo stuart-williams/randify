@@ -5,7 +5,7 @@ import { getSession } from "next-auth/client";
 import React from "react";
 
 const Page: NextPage = () => (
-  <Layout>
+  <Layout display="flex" justifyContent="center">
     <SpotifyAuthButton />
   </Layout>
 );
