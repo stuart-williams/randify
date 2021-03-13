@@ -38,7 +38,8 @@ const playlistsResponse: PartialDeep<SpotifyApi.ListOfCurrentUsersPlaylistsRespo
         },
       ],
       owner: {
-        display_name: "stuart",
+        id: "stuart",
+        display_name: "Stuart Williams",
       },
       tracks: {
         total: 32,
@@ -63,7 +64,8 @@ const playlistsResponse: PartialDeep<SpotifyApi.ListOfCurrentUsersPlaylistsRespo
         },
       ],
       owner: {
-        display_name: "stuart",
+        id: "stuart",
+        display_name: "Stuart Williams",
       },
       tracks: {
         total: 10,
@@ -83,7 +85,8 @@ const playlistsResponse: PartialDeep<SpotifyApi.ListOfCurrentUsersPlaylistsRespo
         },
       ],
       owner: {
-        display_name: "someoneelse",
+        id: "someoneelse",
+        display_name: "Someone Else",
       },
       tracks: {
         total: 10,
