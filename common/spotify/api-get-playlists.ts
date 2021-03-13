@@ -12,7 +12,7 @@ export interface Playlist {
 
 export const getPlaylists = async (session: Session): Promise<Playlist[]> => {
   const data = await request<SpotifyApi.ListOfCurrentUsersPlaylistsResponse>({
-    path: "me/playlists",
+    path: "me/playlists?limit=50",
     session,
   });
 
