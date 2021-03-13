@@ -1,3 +1,5 @@
+// TODO: UPDATE TESTS!
+
 import { getPlaylists } from "common/spotify";
 import { rest } from "msw";
 import { setupServer } from "msw/node";
@@ -119,14 +121,14 @@ describe("getPlaylists", () => {
       {
         id: "playlist_1",
         name: "Playlist 1",
-        imageUrl: "sm.png",
+        imageUrl: "lg.png",
         spotifyUrl: "playlist/playlist_1",
         numberOfTracks: 32,
       },
       {
         id: "playlist_2",
         name: "Playlist 2",
-        imageUrl: "md.png",
+        imageUrl: "lg.png",
         spotifyUrl: "playlist/playlist_2",
         numberOfTracks: 10,
       },

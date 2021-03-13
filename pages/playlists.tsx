@@ -1,4 +1,5 @@
 import { List, ListItem } from "@chakra-ui/react";
+import * as log from "common/logger";
 import { getPlaylists, Playlist } from "common/spotify";
 import Layout from "components/Layout";
 import PlaylistItem from "components/PlaylistItem";
@@ -57,13 +58,15 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
       },
     };
   } catch (error) {
+    log.error(error);
+
     if (error.status === 401) {
       return { redirect };
     }
 
     return {
       props: {
-        statusCode: error.status,
+        statusCode: error.status || 500,
       },
     };
   }
