@@ -15,9 +15,7 @@ const PlaylistItem: FunctionComponent<Props> = ({ playlist }) => {
 
   return (
     <Flex data-cy={id} alignItems="center">
-      <Flex position="relative" w="50px" h="50px">
-        <Image src={imageUrl} alt={name} layout="fill" />
-      </Flex>
+      <Image src={imageUrl} alt={name} width="50px" height="50px" />
       <Link
         mx={4}
         flex={1}
