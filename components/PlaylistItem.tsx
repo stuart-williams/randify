@@ -33,7 +33,6 @@ const PlaylistItem: FunctionComponent<Props> = ({ playlist }) => {
         data-cy="randomise-btn"
         isLoading={isLoading}
         aria-label="Randomise this playlist"
-        colorScheme="green"
         borderRadius="full"
       />
     </Flex>
