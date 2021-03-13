@@ -17,7 +17,7 @@ export const getPlaylists = async (session: Session): Promise<Playlist[]> => {
   });
 
   return data.items.reduce<Playlist[]>((accum, item) => {
-    if (item.owner.id === session.user.name) {
+    if (item.owner.display_name === session.user.name) {
       const playlist: Playlist = {
         id: item.id,
         name: item.name,
