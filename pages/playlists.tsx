@@ -52,6 +52,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
   try {
     return {
       props: {
+        session,
         playlists: await getPlaylists(session),
       },
     };
