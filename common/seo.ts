@@ -1,4 +1,8 @@
-export default {
+import { DefaultSeoProps } from "next-seo";
+
+const props: DefaultSeoProps = {
   title: "Randify",
-  descripton: "Randomise your Spotify playlists",
+  description: "Randomise your Spotify playlists",
 };
+
+export default props;
