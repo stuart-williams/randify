@@ -20,19 +20,20 @@ const PlaylistItem: FunctionComponent<Props> = ({ playlist }) => {
         mx={4}
         flex={1}
         href={spotifyUrl}
-        isExternal
-        isTruncated
         fontSize="md"
+        isExternal
         fontWeight="600"
+        isTruncated
       >
         {name}
       </Link>
       <IconButton
-        data-cy="randomise-btn"
         icon={<Icon as={RandomIcon} />}
         onClick={randomise}
+        data-cy="randomise-btn"
         isLoading={isLoading}
         aria-label="Randomise this playlist"
+        colorScheme="green"
         borderRadius="full"
       />
     </Flex>
