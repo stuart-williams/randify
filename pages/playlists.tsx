@@ -5,6 +5,7 @@ import PlaylistItem from "components/PlaylistItem";
 import RandomisingModal from "components/RandomisingModal";
 import { GetServerSideProps, NextPage } from "next";
 import { getSession } from "next-auth/client";
+import { NextSeo } from "next-seo";
 import Error from "next/error";
 import React from "react";
 import { RecoilRoot } from "recoil";
@@ -22,6 +23,7 @@ const Page: NextPage<Props> = ({ playlists, statusCode }) => {
   return (
     <RecoilRoot>
       <Layout>
+        <NextSeo noindex />
         <RandomisingModal />
         <List spacing={3}>
           {playlists.map((playlist) => (
