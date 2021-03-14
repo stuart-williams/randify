@@ -29,6 +29,7 @@ const PlaylistItem: FunctionComponent<Props> = ({ playlist }) => {
       </Link>
       <IconButton
         icon={<Icon as={RandomIcon} />}
+        variant="ghost"
         onClick={randomise}
         data-cy="randomise-btn"
         isLoading={isLoading}
