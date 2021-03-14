@@ -27,3 +27,7 @@ yarn-error.log*
 .env*
 !.env.local.example
 cypress.env.json
+
+# pwa
+public/sw.*
+public/workbox-*
