@@ -1,10 +1,23 @@
 {
     "name": "Randify",
     "short_name": "Randify",
-    "icons": [],
-    "theme_color": "#FFFFFF",
-    "background_color": "#FFFFFF",
-    "start_url": "/",
+    "description": "Randomise your Spotify playlists",
+    "scope": "/",
+    "start_url": "/playlists",
+    "theme_color": "#1DB954",
+    "background_color": "#ffffff",
     "display": "standalone",
-    "orientation": "portrait"
+    "orientation": "portrait",
+    "icons": [
+        {
+            "src": "/images/icon-192.png",
+            "type": "image/png",
+            "sizes": "192x192"
+        },
+        {
+            "src": "/images/icon-512.png",
+            "type": "image/png",
+            "sizes": "512x512"
+        }
+    ]
 }
