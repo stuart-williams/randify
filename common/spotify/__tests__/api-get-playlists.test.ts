@@ -22,6 +22,7 @@ describe("getPlaylists", () => {
   let responses: PartialDeep<SpotifyApi.ListOfCurrentUsersPlaylistsResponse>[] = [];
 
   beforeEach(() => {
+    params = [];
     responses = [
       {
         items: [

@@ -23,11 +23,7 @@ const getAllPlaylists = async (
 
     const items = [...playlists, ...data.items];
 
-    if (data.total > items.length) {
-      return next(items.length - 1, items);
-    }
-
-    return items;
+    return data.total > items.length ? next(items.length - 1, items) : items;
   };
 
   return next(0, []);
@@ -44,19 +40,20 @@ const isValid = (
 export const getPlaylists = async (session: Session): Promise<Playlist[]> => {
   const playlists = await getAllPlaylists(session);
 
-  return playlists.reduce<Playlist[]>((items, item) => {
-    if (isValid(item, session)) {
-      const playlist: Playlist = {
-        id: item.id,
-        name: item.name,
-        imageUrl: item.images[0].url,
-        spotifyUrl: item.external_urls.spotify,
-        numberOfTracks: item.tracks.total,
-      };
-
-      return [...items, playlist];
-    }
-
-    return items;
-  }, []);
+  return playlists.reduce<Playlist[]>(
+    (items, item) =>
+      isValid(item, session)
+        ? [
+            ...items,
+            {
+              id: item.id,
+              name: item.name,
+              imageUrl: item.images[0].url,
+              spotifyUrl: item.external_urls.spotify,
+              numberOfTracks: item.tracks.total,
+            } as Playlist,
+          ]
+        : items,
+    []
+  );
 };
