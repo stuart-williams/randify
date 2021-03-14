@@ -4,10 +4,14 @@ const withBundleAnalyzer = require("@next/bundle-analyzer")({
   enabled: process.env.ANALYZE === "true",
 });
 
+// next-pwa breaks default env loading?
+require("dotenv").config({
+  path: ".env.local",
+});
+
 module.exports = withPlugins([withPWA, withBundleAnalyzer], {
   env: {
     API_URL: process.env.API_URL,
-    REPO_URL: process.env.REPO_URL,
   },
   i18n: {
     locales: ["en-GB"],
