@@ -24,19 +24,10 @@ const playlistsResponse: PartialDeep<SpotifyApi.ListOfCurrentUsersPlaylistsRespo
       },
       images: [
         {
-          height: 640,
-          url: "lg.png",
-          width: 640,
+          url: "640.png",
         },
         {
-          height: 300,
-          url: "md.png",
-          width: 300,
-        },
-        {
-          height: 60,
-          url: "sm.png",
-          width: 60,
+          url: "300.png",
         },
       ],
       owner: {
@@ -54,14 +45,7 @@ const playlistsResponse: PartialDeep<SpotifyApi.ListOfCurrentUsersPlaylistsRespo
       },
       images: [
         {
-          height: 640,
-          url: "lg.png",
-          width: 640,
-        },
-        {
-          height: 300,
-          url: "md.png",
-          width: 300,
+          url: "300.png",
         },
       ],
       owner: {
@@ -73,19 +57,49 @@ const playlistsResponse: PartialDeep<SpotifyApi.ListOfCurrentUsersPlaylistsRespo
     },
     {
       id: "playlist_3",
-      name: "Playlist 3",
+      name: "Not my Playlist",
       external_urls: {
         spotify: "playlist/playlist_3",
       },
       images: [
         {
-          height: 640,
-          url: "lg.png",
-          width: 640,
+          url: "640.png",
         },
       ],
       owner: {
         display_name: "someoneelse",
+      },
+      tracks: {
+        total: 10,
+      },
+    },
+    {
+      id: "playlist_4",
+      name: "Empty Playlist",
+      external_urls: {
+        spotify: "playlist/playlist_4",
+      },
+      images: [
+        {
+          url: "640.png",
+        },
+      ],
+      owner: {
+        display_name: "stuart",
+      },
+      tracks: {
+        total: 0,
+      },
+    },
+    {
+      id: "playlist_5",
+      name: "No Images Playlist",
+      external_urls: {
+        spotify: "playlist/playlist_5",
+      },
+      images: [],
+      owner: {
+        display_name: "stuart",
       },
       tracks: {
         total: 10,
@@ -121,14 +135,14 @@ describe("getPlaylists", () => {
       {
         id: "playlist_1",
         name: "Playlist 1",
-        imageUrl: "lg.png",
+        imageUrl: "640.png",
         spotifyUrl: "playlist/playlist_1",
         numberOfTracks: 32,
       },
       {
         id: "playlist_2",
         name: "Playlist 2",
-        imageUrl: "lg.png",
+        imageUrl: "300.png",
         spotifyUrl: "playlist/playlist_2",
         numberOfTracks: 10,
       },
