@@ -29,7 +29,7 @@ describe("Auth", () => {
 
     cy.visit(Cypress.env("HOST"));
 
-    cy.dataCy("account-menu-btn").click();
+    cy.dataCy("settings-menu-btn").click();
     cy.dataCy("signout-btn").click();
 
     cy.location("pathname").should("eq", "/");
