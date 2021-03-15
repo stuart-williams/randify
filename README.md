@@ -1,3 +1,7 @@
+# Randify
+
+[![Test](https://github.com/stuart-williams/randify/actions/workflows/test.yml/badge.svg?branch=main)](https://github.com/stuart-williams/randify/actions/workflows/test.yml)
+
 ## Getting Started
 
 Set up your environment:
