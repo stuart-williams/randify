@@ -31,4 +31,13 @@ export default extendTheme({
       900: "#000000",
     },
   },
+  styles: {
+    global: {
+      "html, body, #__next": {
+        height: "100%",
+        display: "flex",
+        flexDirection: "column",
+      },
+    },
+  },
 });

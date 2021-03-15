@@ -1,15 +1,13 @@
 const withPlugins = require("next-compose-plugins");
 const withPWA = require("next-pwa");
+const withImages = require("next-images");
 const withBundleAnalyzer = require("@next/bundle-analyzer")({
   enabled: process.env.ANALYZE === "true",
 });
 
-// next-pwa breaks default env loading?
-require("dotenv").config({
-  path: ".env.local",
-});
+require("dotenv").config({ path: ".env.local" });
 
-module.exports = withPlugins([withPWA, withBundleAnalyzer], {
+module.exports = withPlugins([withPWA, withImages, withBundleAnalyzer], {
   env: {
     API_URL: process.env.API_URL,
   },
