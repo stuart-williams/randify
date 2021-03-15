@@ -21,6 +21,8 @@ class MyDocument extends Document {
       <Html>
         <Head>
           <link rel="manifest" href="/manifest.json" />
+          <meta name="theme-color" content="#0d0d0d" />
+          <link rel="apple-touch-icon" href="/images/maskable_icon_x192.png" />
         </Head>
         <body>
           <Main />
