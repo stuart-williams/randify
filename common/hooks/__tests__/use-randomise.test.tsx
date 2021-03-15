@@ -20,7 +20,7 @@ const wrapper: FunctionComponent = ({ children }) => (
 
 describe("useRandomise", () => {
   const server = setupServer(
-    rest.get(`${process.env.API_URL}/randomise/playlist_1`, (req, res, ctx) => {
+    rest.put(`${process.env.API_URL}/randomise/playlist_1`, (req, res, ctx) => {
       return res(ctx.status(204));
     })
   );
@@ -53,11 +53,11 @@ describe("useRandomise", () => {
     expect(result.current.error).toEqual(null);
   });
 
-  it("should...", async () => {
+  it("should handle http errors", async () => {
     expect.assertions(2);
 
     server.use(
-      rest.get(
+      rest.put(
         `${process.env.API_URL}/randomise/playlist_1`,
         (req, res, ctx) => {
           return res(ctx.status(401));
