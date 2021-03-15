@@ -13,8 +13,8 @@ import {
 import { signOut, useSession } from "next-auth/client";
 import React, { FunctionComponent } from "react";
 import {
-  FaCog as SessingsIcon,
   FaSignOutAlt as SignOutIcon,
+  FaUserCircle as SessingsIcon,
 } from "react-icons/fa";
 
 const AppBar: FunctionComponent = () => {
