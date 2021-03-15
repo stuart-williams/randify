@@ -22,7 +22,7 @@ const PlaylistItem: FunctionComponent<Props> = ({ playlist }) => {
         href={spotifyUrl}
         fontSize="md"
         isExternal
-        fontWeight="600"
+        fontWeight="500"
         isTruncated
       >
         {name}
