@@ -24,7 +24,17 @@ const AppBar: FunctionComponent = () => {
   const [session] = useSession();
 
   return (
-    <Container as="header" display="flex" alignItems="center">
+    <Container
+      as="header"
+      bg="gray.800"
+      top={0}
+      maxW="container.lg"
+      zIndex="sticky"
+      display="flex"
+      position="sticky"
+      boxShadow="lg"
+      alignItems="center"
+    >
       <Flex flex={1} height="60px" alignItems="center">
         <Img src={logoSrc} alt="Randify" boxSize="32px" />
         <Text ml={2} fontWeight="bold">
@@ -32,7 +42,7 @@ const AppBar: FunctionComponent = () => {
         </Text>
       </Flex>
       {session && (
-        <Menu>
+        <Menu placement="bottom-end">
           <MenuButton
             as={IconButton}
             icon={<Icon as={SessingsIcon} />}
