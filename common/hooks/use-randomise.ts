@@ -29,7 +29,7 @@ const useRandomise = (
 
       log.http(`--> ${url}`);
 
-      const res = await fetch(url);
+      const res = await fetch(url, { method: "PUT" });
 
       log.http(`<-- ${url} ${res.status} ${res.statusText}`);
 
