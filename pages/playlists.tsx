@@ -26,7 +26,7 @@ const Page: NextPage<Props> = ({ playlists, statusCode }) => {
       <Layout>
         <NextSeo noindex />
         <RandomisingModal />
-        <List spacing={3}>
+        <List spacing={2}>
           {playlists.map((playlist) => (
             <ListItem key={playlist.id}>
               <PlaylistItem playlist={playlist} />

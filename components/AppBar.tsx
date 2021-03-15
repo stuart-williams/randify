@@ -25,7 +25,7 @@ const AppBar: FunctionComponent = () => {
 
   return (
     <Container as="header" display="flex" alignItems="center">
-      <Flex flex={1} height="54px" alignItems="center">
+      <Flex flex={1} height="60px" alignItems="center">
         <Img src={logoSrc} alt="Randify" boxSize="32px" />
         <Text ml={2} fontWeight="bold">
           Randify
