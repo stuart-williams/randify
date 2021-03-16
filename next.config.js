@@ -10,6 +10,7 @@ require("dotenv").config({ path: ".env.local" });
 module.exports = withPlugins([withPWA, withImages, withBundleAnalyzer], {
   env: {
     API_URL: process.env.API_URL,
+    GA_TRACKING_ID: process.env.GA_TRACKING_ID,
   },
   i18n: {
     locales: ["en-GB"],

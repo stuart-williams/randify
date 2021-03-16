@@ -1,6 +1,7 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import { ChakraProvider } from "@chakra-ui/react";
 import theme from "common/theme";
+import Analytics from "components/Analytics";
 import GlobalMeta from "components/GlobalMeta";
 import { NextPage } from "next";
 import { Provider } from "next-auth/client";
@@ -11,6 +12,7 @@ const App: NextPage<AppProps> = ({ Component, pageProps }) => (
   <Provider session={pageProps.session}>
     <ChakraProvider theme={theme}>
       <GlobalMeta />
+      <Analytics />
       <Component {...pageProps} />
     </ChakraProvider>
   </Provider>
